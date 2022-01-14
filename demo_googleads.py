@@ -17,11 +17,10 @@ from google.protobuf.json_format import MessageToJson, MessageToDict
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-vault = config['os']['vault']   # Uses gnome-keyring to fetch password
 host = config['mysql']['host']
 user = config['mysql']['user']
 db = config['mysql']['db']
-
+vault = config['os']['vault']   # Uses gnome-keyring to fetch database password
 
 qu_kwargs = {
     'vault': vault,
